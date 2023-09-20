@@ -1,5 +1,7 @@
+#pip imports README.md
 import numpy as np
 from scipy.integrate import odeint
+import matplotlib.pyplot as plt
 
 def network_bandwidth(y, t, rate):
     return rate - y
@@ -17,10 +19,9 @@ sol = odeint(network_bandwidth, y0, t, args=(rate,))
 # print the solution
 print(sol)
 
-import matplotlib.pyplot as plt
-# This makes the plots appear inside the notebook
+
 # % matplotlib inline
-plt.rcParams.update({'font.size': 14})  # increase the font size
+plt.rcParams.update({'font.size': 14})  
 plt.title('Rate of Network Bandwidth vs Data Transmitted')
 plt.xlabel('Time (s)')
 plt.ylabel('Rate of data transmitted')
