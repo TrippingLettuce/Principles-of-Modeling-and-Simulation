@@ -1,11 +1,12 @@
+import numpy as np
 
 y0=1 #initial values
-x0=1 
-h=0.1 # step
+x0=2
+h=0.3 # step
 
 
-def ode(yn,xn): #differential equation
-    f = xn+yn
+def ode(xn,yn): #differential equation
+    f = -yn+np.log(xn)
     return f
 
 def rungeKuttaT4(yn,xn,h,n): #4th degree runge-kutta method
