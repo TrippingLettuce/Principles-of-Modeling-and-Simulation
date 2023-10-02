@@ -3,6 +3,8 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 import time
 
+# The ODE is 𝑓(𝑥,𝑦)= −𝑦+𝑙𝑛𝑥 ,𝑥0=2,𝑦0=1,ℎ=0.3
+
 y0 = 1  # initial values
 x0 = 2
 h = 0.3  # step
@@ -72,7 +74,7 @@ ax.plot(x, y_odeint, label='odeint', color='red', linestyle='--')
 ax.set_xlabel('X-axis')
 ax.set_ylabel('Y-axis')
 ax.set_title('1000 points comparison of runge-kutta and ode for -y=lnx')
-ax.legend()
+ax.legend(loc='lower right', bbox_to_anchor=(0.98, 0.02))
 
 # Display computation times on the plot
 time_text_rk = f"Time for rungeKuttaT4: {elapsed_time_rk:.4f} seconds"
